@@ -1,0 +1,26 @@
+<%rows = pagination hikes.size, 3%>
+<%rows.each do |row|%>
+	<div class="row"> 
+		<% row.each do |i|%>
+		  <% hike = hikes[i] %>
+			<div class="col-md-4">
+				<div class="hikeBox">
+					<div class="hikeImageAndName">
+						<img src="<%= hike.image_url %>">
+						<span><%= hike.hike_name %></span>
+					</div>
+					<div class="hikeStats">
+						<span class="glyphicon glyphicon-road" aria-hidden="true"></span> Star
+						<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Star
+						<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Star
+					</div>
+				</div>
+			</div>
+			<% end %>
+	</div>
+
+<% end %>
+
+<div class="row">
+	<a class="btn btn-default" href="<%= "/hikes/#{page.to_i+1}" %>" role="button">Show More Matching Hikes</a>
+</div>

@@ -1,0 +1,26 @@
+.topItem {
+	background: #e0ebeb;
+}
+
+.hikeBox {
+	border: 2px solid #57c157;
+	border-radius: 5px;
+	background: #ecf8ec;
+	padding: 5px;
+	display: flex;
+}
+
+.hikeImageAndName {
+	display: flex;
+	flex-direction: column;
+}
+
+.hikeStats {
+	display: flex;
+	flex-direction: column;
+}
+
+.hikeImage {
+	
+}
+
