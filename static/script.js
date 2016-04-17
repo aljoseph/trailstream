@@ -1,23 +1,19 @@
 $( document ).ready(function() {
 	
-	$("#hikes").load("/hikes/1")
+	$(".hikes").load("/hikes/1")
 	
-	if ( $(".hikeBox").length > 99 ) {
-		$("a:last").on( "click", function(event){
+	if ( $(".hikes .col-md-4").length > 99 ) {
+		$(".hikes:last a:last").on( "click", function(event){
 			event.preventDefault();
-			var url = $("a:last").attr("href");
+			var url = $(".hikes:last a:last").attr("href");
 			var newDiv = document.createElement("div");
+			$(newDiv).addClass("container-fluid hikes");
 			$(newDiv).load(url);
-			$("a:last").remove();
-			stuff = $("#hikes")
-			newDiv.contents().appendTo( stuff );
+			$(".hikes:last").after( $(newDiv) );
 		});
 	}
 	else {
-		$("a:last").remove();
+		$(".hikes:last a:last").remove();
 	}
-	
-	
-	
 	
 });
