@@ -1,4 +1,4 @@
-def trail_attributes_m
+def all_trail_features
   ["Dogs allowed on leash", "Old growth", "Waterfalls", "Lakes", "Coast", "Mountain views", "Good for kids", "Wildflowers/Meadows", "Established campsites", "Rivers", "Ridges/passes", "Summits", "Accessible by Bus"]
 end
 

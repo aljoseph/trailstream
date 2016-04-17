@@ -13,7 +13,7 @@ require 'gon-sinatra'
 Sinatra::register Gon::Sinatra
 
 
-use Rack::Session::Pool, :expire_after => 60*60
+use Rack::Session::Pool, :expire_after => 60*60 # one hour :)
 
 
 class Hike < ActiveRecord::Base
@@ -27,7 +27,13 @@ set :views, "views"
 
 get '/' do
   session[:hikes] ||= Hike.where.not(minutes_from_seattle: nil, roundtrip_distance: nil, elevation_gain: nil, image_url: nil)
-  erb :index, :locals => {'total_hikes' => session[:hikes].count}
+  session[:min_minutes] ||= 0
+  session[:max_minutes] ||= 90
+  session[:min_miles] ||= 0
+  session[:max_miles] ||= 10
+  session[:min_feet] ||= 0
+  session[:max_feet] ||= 5000
+  erb :index, :locals => {'total_hikes' => session[:hikes].count, 'min_minutes' => session[:min_minutes], 'max_minutes' => session[:max_minutes], 'min_miles' => session[:min_miles], 'max_miles' => session[:max_miles], 'min_feet' => session[:min_feet], 'max_feet' => session[:max_feet], 'trail_attributes' => session[:trail_attributes]}
 end
 
 get '/hikes/:page' do
@@ -62,6 +68,8 @@ get '/filter' do
     end
     session[:hikes] = Hike.where(id: filtered_hikes.map(&:id))
   end
+  
+  params.each { |k,v| session[k] = v }
   
   
   redirect '/'
