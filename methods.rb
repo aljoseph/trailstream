@@ -71,7 +71,7 @@ def create_records
         details = get_details hike.css("a").first['href']
         puts hike.css("span")[2].text.strip
         puts details
-        distance = get_distance( 'car', details[:gps] )
+        distance = get_distance( 'car', details[:gps], 'Seattle' )
     
         record_hash.merge!( :hike_name => hike.css("span")[2].text.strip ) if hike.css("span")[2]
         record_hash.merge!( :roundtrip_distance => hike.css("span")[3].text.to_f ) if hike.css("span")[3]
