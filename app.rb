@@ -33,6 +33,7 @@ get '/' do
   session[:max_miles] ||= 10
   session[:min_feet] ||= 0
   session[:max_feet] ||= 5000
+  session[:trail_attributes] ||= []
   erb :index, :locals => {'total_hikes' => session[:hikes].count, 'min_minutes' => session[:min_minutes], 'max_minutes' => session[:max_minutes], 'min_miles' => session[:min_miles], 'max_miles' => session[:max_miles], 'min_feet' => session[:min_feet], 'max_feet' => session[:max_feet], 'trail_attributes' => session[:trail_attributes]}
 end
 
