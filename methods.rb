@@ -49,7 +49,7 @@ def get_all_trail_data
   x = 0
   hikes = []
   
-  112.times do |i| #set this low for testing so we don't burn thru google api limit
+  50.times do |i| #set this low for testing so we don't burn thru google api limit
     doc = Nokogiri::HTML(open("http://www.wta.org/go-hiking/hikes/hike_search?title=&region=all&subregion=all&rating=0&mileage%3Aint=0&elevationgain%3Aint=0&highpoint=&searchabletext=&sort=&show_adv=0&filter=Search&b_start:int=#{x}"))
     hikes << doc.css("div.search-result-item")
     x += 30
