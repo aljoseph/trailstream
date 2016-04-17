@@ -23,60 +23,62 @@
 		</div>
 		<div class="container-fluid">
 			<div class="row" id="filters-sorts">
-				<div class="col-md-3 topItem">
-					<div class="ui-field-contain">
-					    <label for="select-custom-19"></label>
-					    <select name="select-custom-19" id="select-custom-19" multiple="multiple" data-native-menu="false">
+			  <form data-ajax=”false” action="/filter" method="GET">
+					<div class="col-md-3 topItem">
+					
+						<div class="ui-field-contain">
+						  <label for="select-custom-19"></label>
+						  <select name="trail_attributes[]" id="select-custom-19" multiple="multiple" data-native-menu="false">
 						    <%features = trail_attributes%>
 							  <option>Trail Features</option> 
 							  <% features.each do |feature|%>  
 					        <option selected="selected" value="<%=feature %>"><%=feature %></option>
 								<% end %>
-					    </select>
+						  </select>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-6 topItem">
-					<form>
+					<div class="col-md-6 topItem">
+				
 					  <div data-role="rangeslider">
-					    <label for="range-10a">Rangeslider:</label>
-					    <input type="range" name="range-10a" id="range-10a" min="0" max="240" step="5" value="0">
+					    <label for="range-10a">Drive-time from Seattle:</label>
+					    <input type="range" name="min_minutes" id="range-10a" min="0" max="240" step="5" value="0">
 					    <label for="range-10b">Rangeslider:</label>
-					    <input type="range" name="range-10b" id="range-10b" min="0" max="240" step="5" value="90">
+					    <input type="range" name="max_minutes" id="range-10b" min="0" max="240" step="5" value="90">
 					  </div>
 					  <div data-role="rangeslider">
-					    <label for="range-10c">Rangeslider:</label>
-					    <input type="range" name="range-10c" id="range-10c" min="0" max="30" step="1" value="0">
+					    <label for="range-10c">Round-trip of hike</label>
+					    <input type="range" name="min_miles" id="range-10c" min="0" max="30" step="1" value="0">
 					    <label for="range-10d">Rangeslider:</label>
-					    <input type="range" name="range-10d" id="range-10d" min="0" max="30" step="1" value="15">
+					    <input type="range" name="max_miles" id="range-10d" min="0" max="30" step="1" value="15">
 					  </div>
 					  <div data-role="rangeslider">
-					    <label for="range-10e">Rangeslider:</label>
-					    <input type="range" name="range-10e" id="range-10e" min="0" max="10000" step="100" value="0">
+					    <label for="range-10e">Elevation gain</label>
+					    <input type="range" name="min_feet" id="range-10e" min="0" max="10000" step="100" value="0">
 					    <label for="range-10f">Rangeslider:</label>
-					    <input type="range" name="range-10f" id="range-10f" min="0" max="10000" step="100" value="5000">
+					    <input type="range" name="max_feet" id="range-10f" min="0" max="10000" step="100" value="5000">
 					  </div>
 						<button class="ui-btn ui-corner-all">Submit</button>
-					</form>
-				</div>
-				<div class="col-md-3 topItem">
-					354 Hikes Found
-					<form>
-					<div class="ui-field-contain">
-					  <label for="select-native-1"></label>
-					  <select name="select-native-1" id="select-native-1">
-					    <option value="1">The 1st Option</option>
-					    <option value="2">The 2nd Option</option>
-					    <option value="3">The 3rd Option</option>
-					    <option value="4">The 4th Option</option>
-					  </select>
 					</div>
+			  </form>
+				<div class="col-md-3 topItem">
+					Hikes Found: <%= total_hikes %>
+					<br>
+					<form action="/sort" method="POST">
+						<div class="ui-field-contain">
+						  <label for="select-native-1"></label>
+						  <select name="sort_by" id="select-native-1">
+								<option value="minutes_from_seattle">Sort Results</option>
+							  <option value="minutes_from_seattle">Drive-time</option>
+							  <option value="roundtrip_distance">Round-trip of Hike</option>
+							  <option value="elevation_gain">Elevation Gain</option>
+						  </select>
+						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 		
 		<div class="container-fluid hikes" id="1">
-			
 		</div>
 		
 		

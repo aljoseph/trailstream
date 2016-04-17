@@ -27,7 +27,7 @@ set :views, "views"
 
 get '/' do
   session[:hikes] ||= Hike.where.not(minutes_from_seattle: nil, roundtrip_distance: nil, elevation_gain: nil)
-  erb :index
+  erb :index, :locals => {'total_hikes' => session[:hikes].count}
 end
 
 get '/hikes/:page' do
@@ -36,3 +36,32 @@ get '/hikes/:page' do
   subset = get_subset bounds
   erb :hikes, :locals => {'hikes' => subset, 'page' => page}
 end
+
+get '/filter' do 
+  session[:hikes] = Hike.where.not(minutes_from_seattle: nil, 
+                                   roundtrip_distance: nil, 
+                                   elevation_gain: nil
+                                   ).where(
+                                   'minutes_from_seattle >= ?', params[:min_minutes]
+                                   ).where(
+                                   'minutes_from_seattle <= ?', params[:max_minutes]
+                                   ).where(
+                                   'roundtrip_distance >= ?', params[:min_miles]
+                                   ).where(
+                                   'roundtrip_distance <= ?', params[:max_miles]
+                                   ).where(
+                                   'elevation_gain >= ?', params[:min_feet]
+                                   ).where(
+                                   'elevation_gain <= ?', params[:max_feet]
+                                   )
+  #redirect '/'
+end
+
+get '/sort' do
+end
+
+get '/reset' do
+  session[:hikes] = Hike.where.not(minutes_from_seattle: nil, roundtrip_distance: nil, elevation_gain: nil)
+  redirect '/'
+end
+  
