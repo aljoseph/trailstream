@@ -27,11 +27,11 @@ end
 
 def get_bounds size, page
   if page == 1
-    size < 100 ? max = size : max = 99
+    size < 99 ? max = size-1 : max = 98
     bounds = [0, max]
   else
-    ( size - page*100 ) < 100 ? max = size : max = (page*100)+99
-    bounds = [page*100, max]
+    ( size - ( page*99 )) < 99 ? max = size : max = (page*100-1)+98
+    bounds = [(page*100)-1, max]
   end
   
   return bounds

@@ -2,7 +2,7 @@ $( document ).ready(function() {
 	
 	$(".hikes").load("/hikes/1")
 	
-	if ( $(".hikes .col-md-4").length > 99 ) {
+	if ( $(".hikes .col-md-4").length > 98 ) {
 		$(".hikes:last a:last").on( "click", function(event){
 			event.preventDefault();
 			var url = $(".hikes:last a:last").attr("href");
@@ -13,7 +13,7 @@ $( document ).ready(function() {
 		});
 	}
 	else {
-		$(".hikes:last a:last").remove();
+		$("a.btn").remove();
 	}
 	
 });

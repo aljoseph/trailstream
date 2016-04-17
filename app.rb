@@ -54,7 +54,7 @@ get '/filter' do
                                    ).where(
                                    'elevation_gain <= ?', params[:max_feet]
                                    )
-  #redirect '/'
+  redirect '/'
 end
 
 get '/sort' do
