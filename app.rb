@@ -26,7 +26,7 @@ set :public_folder, "static"
 set :views, "views"
 
 get '/' do
-  session[:hikes] ||= Hike.where.not(minutes_from_seattle: nil, roundtrip_distance: nil, elevation_gain: nil)
+  session[:hikes] ||= Hike.where.not(minutes_from_seattle: nil, roundtrip_distance: nil, elevation_gain: nil, image_url: nil)
   erb :index, :locals => {'total_hikes' => session[:hikes].count}
 end
 
@@ -54,6 +54,16 @@ get '/filter' do
                                    ).where(
                                    'elevation_gain <= ?', params[:max_feet]
                                    )
+                                   
+  if params[:trail_attributes]
+    filtered_hikes = session[:hikes]
+    params[:trail_attributes].each do |attribute|
+      filtered_hikes = filtered_hikes.select {|h| h if (JSON.parse h.trail_attributes).include? attribute }
+    end
+    session[:hikes] = Hike.where(id: filtered_hikes.map(&:id))
+  end
+  
+  
   redirect '/'
 end
 

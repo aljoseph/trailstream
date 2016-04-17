@@ -1,4 +1,4 @@
-def trail_attributes
+def trail_attributes_m
   ["Dogs allowed on leash", "Old growth", "Waterfalls", "Lakes", "Coast", "Mountain views", "Good for kids", "Wildflowers/Meadows", "Established campsites", "Rivers", "Ridges/passes", "Summits", "Accessible by Bus"]
 end
 
@@ -30,8 +30,8 @@ def get_bounds size, page
     size < 99 ? max = size-1 : max = 98
     bounds = [0, max]
   else
-    ( size - ( page*99 )) < 99 ? max = size : max = (page*100-1)+98
-    bounds = [(page*100)-1, max]
+    ( size - ( page*99 )) < 99 ? max = size-1 : max = ( (page-1) * 99) + 98
+    bounds = [( (page-1) * 99), max]
   end
   
   return bounds

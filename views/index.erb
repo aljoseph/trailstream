@@ -33,11 +33,20 @@
 						<div class="ui-field-contain">
 						  <label for="select-custom-19">Trail Features</label>
 						  <select name="trail_attributes[]" id="select-custom-19" multiple="multiple" data-native-menu="false">
-						    <%features = trail_attributes%>
 							  <option>Trail Features</option> 
-							  <% features.each do |feature|%>  
-					        <option value="<%=feature %>"><%=feature %></option>
-								<% end %>
+				        <option value="Dogs allowed on leash">Dogs allowed</option>
+								<option value="Old growth">Old growth</option>
+								<option value="Waterfalls">Waterfalls</option>
+								<option value="Lakes">Lakes</option>
+								<option value="Coast">Coast</option>
+								<option value="Mountain views">Mountain views</option>
+								<option value="Good for kids">Good for kids</option>
+								<option value="Wildflowers/Meadows">Wildflowers/Meadows</option>
+								<option value="Established campsites">Established campsites</option>
+								<option value="Rivers">Rivers</option>
+								<option value="Ridges/passes">Ridges/passes</option>
+								<option value="Summits">Summits</option>
+								<option value="Accessible by Bus">Accessible by Bus</option>
 						  </select>
 						</div>
 					</div>
