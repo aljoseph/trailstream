@@ -24,5 +24,10 @@ body {
 
 #siteTitle {
 	font-family: 'Permanent Marker', cursive;
+	color: white;
 }
+
+.jumbotron {
+background-image: url("/jumbopic.jpg");
+background-size: cover;}
 

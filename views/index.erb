@@ -21,16 +21,20 @@
     <![endif]-->
   </head>
   <body>
-		<div class="container-fluid" id="header">
-			<div class="row" id="siteTitle"> <h1>WTA BLAZER</h1></div>
+		<div class="jumbotron">
+		  <div class="container" id="siteTitle">
+		    <h1>WTA BLAZER</h1><br> 
+		  </div>
 		</div>
 		<div class="container-fluid">
 			<div class="row" id="filters-sorts">
 			  <form data-ajax=”false” action="/filter" method="GET" id="filter">
 					<div class="col-md-3 topItem">
-					
+					</div>
+					<div class="col-md-6 topItem">
+						
 						<div class="ui-field-contain">
-						  <label for="select-custom-19"></label>
+						  
 						  <select class="attr_filter" name="trail_attributes[]" multiple="multiple" data-native-menu="false" data-mini="true">
 							  <option>Trail Features</option>
 								<%features = all_trail_features%> 
@@ -43,8 +47,6 @@
 								<%end%>
 						  </select>
 						</div>
-					</div>
-					<div class="col-md-6 topItem">
 				
 					  <div data-role="rangeslider">
 					    <label for="range-10a">Drive-time from Seattle:</label>
@@ -65,29 +67,15 @@
 					    <input type="range" name="max_feet" id="range-10f" min="0" max="8000" step="100" value="<%=max_feet%>">
 					  </div>
 						<button class="ui-btn ui-corner-all">Submit</button>
-					</div>
+						
+						
+	      	</div>
 			  </form>
-				
-				<div class="col-md-3 topItem">
-					Hikes Found: <%= total_hikes %>
-					<br>
-					<form action="/sort" method="POST" id="sort">
-						<div class="ui-field-contain">
-						  <label for="select-native-1"></label>
-						  <select name="sort_by" id="select-native-1" data-mini="true">
-								<option value="minutes_from_seattle">Sort Results</option>
-							  <option value="minutes_from_seattle">Drive-time</option>
-							  <option value="roundtrip_distance">Round-trip of Hike</option>
-							  <option value="elevation_gain">Elevation Gain</option>
-						  </select>
-						</div>
-					</form>
-				</div>
 			</div>
 		</div>
-		
+				
 		<div class="container-fluid hikes">
-		</div>
+	
 		
 		<script src="script.js"></script>
   </body>
