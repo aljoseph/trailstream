@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WTA Blazer</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-		<link rel="stylesheet" href="style.css" />
+		<link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="style.css" />
 		
 		
 
@@ -23,7 +24,7 @@
   </head>
   <body>
 		<div class="container-fluid" id="header">
-			<div class="row"> <h1>WTA BLAZER by Alex Joseph</h1></div>
+			<div class="row" id="siteTitle"> <h1>WTA BLAZER by Alex Joseph</h1></div>
 		</div>
 		<div class="container-fluid">
 			<div class="row" id="filters-sorts">
@@ -31,8 +32,8 @@
 					<div class="col-md-3 topItem">
 					
 						<div class="ui-field-contain">
-						  <label for="select-custom-19">Trail Features</label>
-						  <select name="trail_attributes[]" multiple="multiple" data-native-menu="false">
+						  <label for="select-custom-19"></label>
+						  <select class="attr_filter" name="trail_attributes[]" multiple="multiple" data-native-menu="false" data-mini="true">
 							  <option>Trail Features</option>
 								<%features = all_trail_features%> 
 								<%features.each do |feature|%>
@@ -68,13 +69,14 @@
 						<button class="ui-btn ui-corner-all">Submit</button>
 					</div>
 			  </form>
+				
 				<div class="col-md-3 topItem">
 					Hikes Found: <%= total_hikes %>
 					<br>
 					<form action="/sort" method="POST" id="sort">
 						<div class="ui-field-contain">
 						  <label for="select-native-1"></label>
-						  <select name="sort_by" id="select-native-1">
+						  <select name="sort_by" id="select-native-1" data-mini="true">
 								<option value="minutes_from_seattle">Sort Results</option>
 							  <option value="minutes_from_seattle">Drive-time</option>
 							  <option value="roundtrip_distance">Round-trip of Hike</option>

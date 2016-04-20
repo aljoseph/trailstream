@@ -10,9 +10,9 @@
 						<span><%= hike.hike_name %></span>
 					</div>
 					<div class="hikeStats">
-						<span class="glyphicon glyphicon-road" aria-hidden="true"><%=hike.minutes_from_seattle%> min </span> 
-						<span class="glyphicon glyphicon-repeat" aria-hidden="true"><%=hike.roundtrip_distance%> mi</span> 
-						<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"><%=hike.elevation_gain%> ft</span>
+						<div class="glyphicon glyphicon-road statItem" aria-hidden="true"><%=hike.minutes_from_seattle%> min</div> 
+						<div class="glyphicon glyphicon-repeat statItem" aria-hidden="true"><%=hike.roundtrip_distance%> mi</div> 
+						<div class="glyphicon glyphicon-arrow-up statItem" aria-hidden="true"><%=hike.elevation_gain.to_i%> ft</div>
 					</div>
 				</div>
 			</div>
