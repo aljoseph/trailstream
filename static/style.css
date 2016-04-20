@@ -7,27 +7,11 @@ body {
 }
 
 .hikeBox {
-	border: 2px solid #57c157;
 	align-items: flex-start;
-	text-align: center;
 	flex-basis: 300px;
-	justify-content: center;
-	border-radius: 5px;
 	padding: 15px;
 	display: flex;
-}
-
-.hikeImageAndName {
-	display: flex;
 	flex-direction: column;
-	flex-basis: 150px;
-	max-width: 150px;
-}
-
-.hikeStats {
-	display: flex;
-	flex-direction: column;
-	margin-left: 15px;
 }
 
 .hikeImage {

@@ -5,21 +5,18 @@
 		  <% hike = hikes[i] %>
 			<div class="col-md-4">
 				<div class="hikeBox">
-					<div class="hikeImageAndName">
-						<img src="<%= hike.image_url %>">
-						<span><%= hike.hike_name %></span>
-					</div>
-					<div class="hikeStats">
-						<div class="glyphicon glyphicon-road statItem" aria-hidden="true"><%=hike.minutes_from_seattle%> min</div> 
-						<div class="glyphicon glyphicon-repeat statItem" aria-hidden="true"><%=hike.roundtrip_distance%> mi</div> 
-						<div class="glyphicon glyphicon-arrow-up statItem" aria-hidden="true"><%=hike.elevation_gain.to_i%> ft</div>
-					</div>
+					<img src="<%= hike.image_url %>">
+					<span><%= hike.hike_name %></span>
+					<span>
+						<span>Drive: <%=hike.minutes_from_seattle%> min</span> 
+						<span>Hike: <%=hike.roundtrip_distance%> mi</span> 
+						<span>Gain: <%=hike.elevation_gain.to_i%> ft</span>
+					</span>
 				</div>
 			</div>
-			<% end %>
+		<%end%>
 	</div>
-
-<% end %>
+<%end%>
 
 <div class="row">
 	<a class="btn btn-default" href="<%= "/hikes/#{page.to_i+1}" %>" role="button">Show More Matching Hikes</a>
