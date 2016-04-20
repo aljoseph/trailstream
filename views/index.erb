@@ -25,6 +25,7 @@
 			<div class="row" id="siteTitle"> <h1>WTA BLAZER</h1></div>
 		</div>
 		<div class="container-fluid">
+<<<<<<< HEAD
 			<div class="row" id="filters-sorts">
 			  <form data-ajax=”false” action="/filter" method="GET" id="filter">
 					<div class="col-md-3 topItem">
@@ -45,27 +46,26 @@
 						</div>
 					</div>
 					<div class="col-md-6 topItem">
+=======
+			<form data-ajax=”false” action="/filter" method="GET" id="filter">
+>>>>>>> top-redesign
 				
-					  <div data-role="rangeslider">
-					    <label for="range-10a">Drive-time from Seattle:</label>
-					    <input type="range" name="min_minutes" id="range-10a" min="0" max="180" step="5" value="<%=min_minutes%>">
-					    <label for="range-10b">Drive-time from Seattle:</label>
-					    <input type="range" name="max_minutes" id="range-10b" min="0" max="180" step="5" value="<%=max_minutes%>">
-					  </div>
-					  <div data-role="rangeslider">
-					    <label for="range-10c">Round-trip of hike</label>
-					    <input type="range" name="min_miles" id="range-10c" min="0" max="20" step="1" value="<%=min_miles%>">
-					    <label for="range-10d">Round-trip of hike</label>
-					    <input type="range" name="max_miles" id="range-10d" min="0" max="20" step="1" value="<%=max_miles%>">
-					  </div>
-					  <div data-role="rangeslider">
-					    <label for="range-10e">Elevation gain</label>
-					    <input type="range" name="min_feet" id="range-10e" min="0" max="8000" step="100" value="<%=min_feet%>">
-					    <label for="range-10f">Elevation gain</label>
-					    <input type="range" name="max_feet" id="range-10f" min="0" max="8000" step="100" value="<%=max_feet%>">
-					  </div>
-						<button class="ui-btn ui-corner-all">Submit</button>
+			  <div class="row topItem" id="trail_attributes">
+					<div class="ui-field-contain">
+					  <label for="select-custom-19">Trail Features</label>
+					  <select name="trail_attributes[]" multiple="multiple" data-native-menu="false">
+						  <option>Trail Features</option>
+							<%features = all_trail_features%> 
+							<%features.each do |feature|%>
+							  <%if session[:trail_attributes].include? feature%>
+			        		<option selected="selected" value="<%=feature%>"><%=feature%></option>
+								<% else %>
+								  <option value="<%=feature%>"><%=feature%></option>
+							  <% end %>
+							<%end%>
+					  </select>
 					</div>
+<<<<<<< HEAD
 			  </form>
 				
 				<div class="col-md-3 topItem">
@@ -82,8 +82,49 @@
 						  </select>
 						</div>
 					</form>
+=======
+>>>>>>> top-redesign
 				</div>
+				
+				<div class="row topItem" id="silderz">
+				  <div data-role="rangeslider">
+				    <label for="range-10a">Drive-time from Seattle:</label>
+				    <input type="range" name="min_minutes" id="range-10a" min="0" max="180" step="5" value="<%=min_minutes%>">
+				    <label for="range-10b">Drive-time from Seattle:</label>
+				    <input type="range" name="max_minutes" id="range-10b" min="0" max="180" step="5" value="<%=max_minutes%>">
+				  </div>
+				  <div data-role="rangeslider">
+				    <label for="range-10c">Round-trip of hike</label>
+				    <input type="range" name="min_miles" id="range-10c" min="0" max="20" step="1" value="<%=min_miles%>">
+				    <label for="range-10d">Round-trip of hike</label>
+				    <input type="range" name="max_miles" id="range-10d" min="0" max="20" step="1" value="<%=max_miles%>">
+				  </div>
+				  <div data-role="rangeslider">
+				    <label for="range-10e">Elevation gain</label>
+				    <input type="range" name="min_feet" id="range-10e" min="0" max="8000" step="100" value="<%=min_feet%>">
+				    <label for="range-10f">Elevation gain</label>
+				    <input type="range" name="max_feet" id="range-10f" min="0" max="8000" step="100" value="<%=max_feet%>">
+				  </div>
+					<button class="ui-btn ui-corner-all">Submit</button>
+				</div>
+				
+			</form>
+				
+		  <div class="row topItem" id="sorter">
+				Hikes Found: <%= total_hikes %><br>
+				<form action="/sort" method="POST" id="sort">
+					<div class="ui-field-contain">
+					  <label for="select-native-1"></label>
+					  <select name="sort_by" id="select-native-1">
+							<option value="minutes_from_seattle">Sort Results</option>
+						  <option value="minutes_from_seattle">Drive-time</option>
+						  <option value="roundtrip_distance">Round-trip of Hike</option>
+						  <option value="elevation_gain">Elevation Gain</option>
+					  </select>
+					</div>
+				</form>
 			</div>
+			
 		</div>
 		
 		<div class="container-fluid hikes">
