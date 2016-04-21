@@ -28,7 +28,7 @@ body {
 }
 
 .jumbotron {
-	background-image: url("/jumbopic.jpg");
+	background-image: url('/jumbopic.jpg');
 	background-size: cover;
 
 }
