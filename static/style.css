@@ -28,8 +28,8 @@ body {
 }
 
 .jumbotron {
-background-image: url("jumbopic.jpg");
-background-size: cover;
+	background-image: url("/jumbopic.jpg");
+	background-size: cover;
 
 }
 
