@@ -6,6 +6,21 @@ body {
 	background: grey;
 }
 
+.name {
+	font-size: .5em;
+}
+
+a.siteLink {
+	color: white;
+	visited: ;
+}
+
+a.siteLink:hover, a.siteLink:visited {
+	color: white;
+}
+
+
+
 .hikeBox {
 	align-items: flex-start;
 	flex-basis: 300px;
