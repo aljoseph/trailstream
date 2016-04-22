@@ -12,10 +12,11 @@ body {
 	padding: 15px;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 .hikeImage {
-	
+	margin-bottom: 10px;
 }
 
 .attr_filter {
@@ -31,5 +32,15 @@ body {
 	background-image: url('/images/jumbopic.jpg');
 	background-size: cover;
 
+}
+
+.hikeName {
+	margin-top: 10px;
+	color: black;
+}
+
+.hikeStat {
+	color: #595959;
+	font-size: .7em;
 }
 

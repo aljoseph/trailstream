@@ -4,14 +4,14 @@
 		<% row.each do |i|%>
 		  <% hike = hikes[i] %>
 			<div class="col-md-4">
-				<a href="<%= hike.hike_url %>" target="blank">
+				<a class="hikeImage" href="<%= hike.hike_url %>" target="blank">
 					<div class="hikeBox">
 						<img src="<%= hike.image_url %>">
-						<span><%= hike.hike_name %></span>
+						<span class="hikeName"><%= hike.hike_name %></span>
 						<span>
-							<span>Drive: <%=hike.minutes_from_seattle%> min</span> 
-							<span>Hike: <%=hike.roundtrip_distance%> mi</span> 
-							<span>Gain: <%=hike.elevation_gain.to_i%> ft</span>
+							<span class="hikeStat"><%=hike.minutes_from_seattle%> min | </span> 
+							<span class="hikeStat"><%=hike.roundtrip_distance%> mi | </span> 
+							<span class="hikeStat"><%=hike.elevation_gain.to_i%> ft</span>
 						</span>
 					</div>
 				</a>
