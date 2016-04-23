@@ -122,7 +122,7 @@ def get_distance mode, gps, city #it doesn't get sent as JSON so it doesn't need
   if mode == 'car'
     endpoint = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{city}&destinations=#{gps}&units=imperial&key=#{key}"
   else
-    endpoint = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{city}&destinations=#{gps}&units=imperial&mode=transit&tansit_mode=bus&arrival_time=1459623600&key=#{key}"
+    endpoint = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{city}&destinations=#{gps}&units=imperial&mode=transit&tansit_mode=bus&arrival_time=1461438000&key=#{key}"
   end
   response = Net::HTTP.get(URI(endpoint))
   data = JSON.parse response
