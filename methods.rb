@@ -99,7 +99,7 @@ def add_transit_data hike
   gps = {}
   gps[:latitude] = data['latitude']
   gps[:longitude] = data['longitude']
-  response = get_distance('transit', gps)
+  response = get_distance('transit', gps, "Seattle")
   if response[:duration]
     duration = response[:duration] 
     hike.update_attributes(:transit_time => duration)
