@@ -12,6 +12,7 @@
 							<span class="hikeStat"><%=hike.minutes_from_seattle%> min | </span> 
 							<span class="hikeStat"><%=hike.roundtrip_distance%> mi | </span> 
 							<span class="hikeStat"><%=hike.elevation_gain.to_i%> ft</span>
+							<%if hike.transit_time %><span class ="hikeStat"> | <%=hike.transit_time%> min by bus</span> <%end%>
 						</span>
 					</div>
 				</a>
