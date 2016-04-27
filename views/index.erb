@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WTA Blazer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+		<link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'/>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="style.css"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+		<div class="jumbotron">
+		  <div class="container" id="siteTitle">
+		    <h1>WTA BLAZER <span class="name"><a class="siteLink" href="http://www.alexjoseph.net" target="ex">by Alex Joseph</a></span></h1><br> 
+		  </div>
+		</div>
+		
+		<div class="container-fluid">
+			<div data-role="header">
+			  <h1>Hikes Found: <%=total_hikes%></h1>
+			  <button id ="filterToggle" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-gear">Filters</button>
+			</div>
+			
+			<div class="row" id="filters-sorts">
+			  <form data-ajax=”false” action="/filter" method="GET" id="filter">
+					
+					<div class="col-md-3 topItem">
+					</div>
+					
+					<div class="col-md-6 topItem">
+				
+						<div class="ui-field-contain">
+						  <select class="attr_filter" name="trail_attributes[]" multiple="multiple" data-native-menu="false" data-mini="true">
+							  <option>Trail Features</option>
+								<%features = all_trail_features%> 
+								<%features.each do |feature|%>
+								  <%if session[:trail_attributes].include? feature%>
+				        		<option selected="selected" value="<%=feature%>"><%=feature%></option>
+									<% else %>
+									  <option value="<%=feature%>"><%=feature%></option>
+								  <% end %>
+								<%end%>
+						  </select>
+						</div>
+			
+					  <div data-role="rangeslider">
+					    <label for="range-10a">Drive-time from Seattle in minutes:</label>
+					    <input type="range" name="min_minutes" id="range-10a" min="0" max="180" step="5" value="<%=min_minutes%>">
+					    <label for="range-10b">Drive-time from Seattle:</label>
+					    <input type="range" name="max_minutes" id="range-10b" min="0" max="180" step="5" value="<%=max_minutes%>">
+					  </div>
+					  <div data-role="rangeslider">
+					    <label for="range-10c">Round-trip of hike in miles:</label>
+					    <input type="range" name="min_miles" id="range-10c" min="0" max="20" step="1" value="<%=min_miles%>">
+					    <label for="range-10d">Round-trip of hike</label>
+					    <input type="range" name="max_miles" id="range-10d" min="0" max="20" step="1" value="<%=max_miles%>">
+					  </div>
+					  <div data-role="rangeslider">
+					    <label for="range-10e">Elevation gain in feet:</label>
+					    <input type="range" name="min_feet" id="range-10e" min="0" max="8000" step="100" value="<%=min_feet%>">
+					    <label for="range-10f">Elevation gain</label>
+					    <input type="range" name="max_feet" id="range-10f" min="0" max="8000" step="100" value="<%=max_feet%>">
+					  </div>
+						<button class="ui-btn ui-corner-all">Submit</button>
+						
+	      	</div>
+			  </form>
+
+			</div>
+		 
+			
+		</div>
+				
+		<div class="container-fluid hikes">
+		</div>
+	
+		
+		<script src="script.js"></script>
+  </body>
+</html>

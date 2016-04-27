@@ -1,0 +1,43 @@
+<%rows = pagination hikes.size, 3%>
+<%rows.each do |row|%>
+	<div class="row"> 
+		<% row.each do |i|%>
+		  <% hike = hikes[i] %>
+			<div class="col-md-4">
+				<a class="hikeImage" href="<%= hike.hike_url %>" target="blank">
+					<div class="hikeBox">
+						<img src="<%= hike.image_url %>">
+						<span class="hikeName"><%= hike.hike_name %></span>
+						<span>
+							<span class="hikeStat"><%=hike.minutes_from_seattle%> min | </span> 
+							<span class="hikeStat"><%=hike.roundtrip_distance%> mi | </span> 
+							<span class="hikeStat"><%=hike.elevation_gain.to_i%> ft</span>
+							<%if hike.transit_time %><span class ="hikeStat"> | <%=hike.transit_time%> min by bus</span> <%end%>
+						</span>
+					</div>
+				</a>
+			</div>
+		<%end%>
+	</div>
+<%end%>
+
+<div class="row">
+	<a class="btn btn-default" href="<%= "/hikes/#{page.to_i+1}" %>" role="button">Show More Matching Hikes</a>
+</div>
+
+<script>
+if ( $(".hikes:last .col-md-4").length > 98 ) {
+	$(".hikes:last a:last").on( "click", function(event){
+		event.preventDefault();
+		var url = $(".hikes:last a:last").attr("href");
+		var newDiv = document.createElement("div");
+		$(newDiv).addClass("container-fluid hikes");
+		$(newDiv).load(url);
+		$(".hikes:last a:last").remove()
+		$(".hikes:last").after( $(newDiv) );
+	});
+}
+else {
+	$("a.btn").remove();
+}
+</script>

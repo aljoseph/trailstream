@@ -1,0 +1,63 @@
+.row {
+	margin: 10px 0px;
+}
+
+body {
+	background: grey;
+}
+
+.name {
+	font-size: .5em;
+}
+
+a.siteLink {
+	color: white;
+	visited: ;
+}
+
+a.siteLink:hover, a.siteLink:visited {
+	color: white;
+}
+
+.hikeBox {
+	align-items: flex-start;
+	flex-basis: 300px;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hikeBox:hover {
+	background: #f2f2f2;
+}
+
+.hikeImage {
+	margin-bottom: 10px;
+}
+
+.attr_filter {
+	margin: auto;
+}
+
+#siteTitle {
+	font-family: 'Permanent Marker', cursive;
+	color: white;
+}
+
+.jumbotron {
+	background-image: url('/images/jumbopic.jpg');
+	background-size: cover;
+
+}
+
+.hikeName {
+	margin-top: 10px;
+	color: black;
+}
+
+.hikeStat {
+	color: #595959;
+	font-size: .7em;
+}
+
