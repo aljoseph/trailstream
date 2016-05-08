@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
 		<link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'/>
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>		
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="style.css"/>
@@ -21,6 +21,11 @@
     <![endif]-->
   </head>
   <body>
+		<script>
+		function toggleFilter(){
+			$("#filters-sorts").slideToggle(100);	
+		}
+		</script>
 		<div class="jumbotron">
 		  <div class="container" id="siteTitle">
 		    <h1>Trailstream  <span class="name"><a class="siteLink" href="http://www.alexjoseph.net" target="ex">by Alex Joseph</a></span></h1><br> 
@@ -34,7 +39,7 @@
 			</div>
 			
 			<div class="row" id="filters-sorts">
-			  <form data-ajax=”false” action="/filter" method="GET" id="filter">
+			  <form action="/filter" method="GET" id="filter" data-ajax="false">
 					
 					<div class="col-md-3 topItem">
 					</div>

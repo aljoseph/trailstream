@@ -1,5 +1,5 @@
 def all_trail_features
-  ["Dogs allowed on leash", "Old growth", "Waterfalls", "Lakes", "Coast", "Mountain views", "Good for kids", "Wildflowers/Meadows", "Established campsites", "Rivers", "Ridges/passes", "Summits", "Accessible by Bus"]
+  ["Dogs allowed on leash", "Waterfalls", "Lakes", "Coast", "Good for kids", "Established campsites", "Rivers", "Ridges/passes", "Summits", "Accessible by Bus"]
 end
 
 def pagination num_of_hikes, items_per

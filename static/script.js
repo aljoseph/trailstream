@@ -1,7 +1,3 @@
-function toggleFilter(){
-	$("#filters-sorts").slideToggle(100);	
-}
-
 $( document ).ready(function() {
 	
 	$(".hikes").load("/hikes/1")
