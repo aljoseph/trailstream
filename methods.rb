@@ -1,9 +1,7 @@
 def all_trail_features
-<<<<<<< HEAD
+
   ["Dogs allowed on leash", "Waterfalls", "Lakes", "Coast", "Good for kids", "Established campsites", "Rivers", "Ridges/passes", "Summits", "Accessible by Bus"]
-=======
-  ["Dogs allowed on leash", "Old growth", "Waterfalls", "Lakes", "Coast", "Mountain views", "Good for kids", "Wildflowers/Meadows", "Established campsites", "Rivers", "Ridges/passes", "Summits", "Accessible by Bus"]
->>>>>>> d65657c13aa2fcbb23e266c0ef823f085105fcc9
+
 end
 
 def pagination num_of_hikes, items_per
@@ -145,8 +143,6 @@ def get_distance mode, gps, city #it doesn't get sent as JSON so it doesn't need
     return {:distance => (distance*0.000621371).round(1), :duration => duration/60} #converted to miles & minutes
   end
 
-<<<<<<< HEAD
+
 end
-=======
-end
->>>>>>> d65657c13aa2fcbb23e266c0ef823f085105fcc9
+
