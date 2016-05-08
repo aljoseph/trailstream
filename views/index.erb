@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
 		<link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'/>
+<<<<<<< HEAD
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>		
+=======
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+>>>>>>> d65657c13aa2fcbb23e266c0ef823f085105fcc9
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="style.css"/>
@@ -21,6 +25,7 @@
     <![endif]-->
   </head>
   <body>
+<<<<<<< HEAD
 		<script>
 		function toggleFilter(){
 			$("#filters-sorts").slideToggle(100);	
@@ -29,10 +34,16 @@
 		<div class="jumbotron">
 		  <div class="container" id="siteTitle">
 		    <h1>Trailstream  <span class="name"><a class="siteLink" href="http://www.alexjoseph.net" target="ex">by Alex Joseph</a></span></h1><br> 
+=======
+		<div class="jumbotron">
+		  <div class="container" id="siteTitle">
+		    <h1>WTA BLAZER <span class="name"><a class="siteLink" href="http://www.alexjoseph.net" target="ex">by Alex Joseph</a></span></h1><br> 
+>>>>>>> d65657c13aa2fcbb23e266c0ef823f085105fcc9
 		  </div>
 		</div>
 		
 		<div class="container-fluid">
+<<<<<<< HEAD
 			<div data-role="header">
 			  <h1>Hikes Found: <%=total_hikes%></h1>
 			  <button onclick="toggleFilter()" id ="filterToggle" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-gear">Filters</button>
@@ -40,6 +51,10 @@
 			
 			<div class="row" id="filters-sorts">
 			  <form action="/filter" method="GET" id="filter" data-ajax="false">
+=======
+			<div class="row" id="filters-sorts">
+			  <form data-ajax=”false” action="/filter" method="GET" id="filter">
+>>>>>>> d65657c13aa2fcbb23e266c0ef823f085105fcc9
 					
 					<div class="col-md-3 topItem">
 					</div>
@@ -61,19 +76,31 @@
 						</div>
 			
 					  <div data-role="rangeslider">
+<<<<<<< HEAD
 					    <label for="range-10a">Drive-time from Seattle in minutes:</label>
+=======
+					    <label for="range-10a">Drive-time from Seattle:</label>
+>>>>>>> d65657c13aa2fcbb23e266c0ef823f085105fcc9
 					    <input type="range" name="min_minutes" id="range-10a" min="0" max="180" step="5" value="<%=min_minutes%>">
 					    <label for="range-10b">Drive-time from Seattle:</label>
 					    <input type="range" name="max_minutes" id="range-10b" min="0" max="180" step="5" value="<%=max_minutes%>">
 					  </div>
 					  <div data-role="rangeslider">
+<<<<<<< HEAD
 					    <label for="range-10c">Round-trip of hike in miles:</label>
+=======
+					    <label for="range-10c">Round-trip of hike</label>
+>>>>>>> d65657c13aa2fcbb23e266c0ef823f085105fcc9
 					    <input type="range" name="min_miles" id="range-10c" min="0" max="20" step="1" value="<%=min_miles%>">
 					    <label for="range-10d">Round-trip of hike</label>
 					    <input type="range" name="max_miles" id="range-10d" min="0" max="20" step="1" value="<%=max_miles%>">
 					  </div>
 					  <div data-role="rangeslider">
+<<<<<<< HEAD
 					    <label for="range-10e">Elevation gain in feet:</label>
+=======
+					    <label for="range-10e">Elevation gain</label>
+>>>>>>> d65657c13aa2fcbb23e266c0ef823f085105fcc9
 					    <input type="range" name="min_feet" id="range-10e" min="0" max="8000" step="100" value="<%=min_feet%>">
 					    <label for="range-10f">Elevation gain</label>
 					    <input type="range" name="max_feet" id="range-10f" min="0" max="8000" step="100" value="<%=max_feet%>">
@@ -84,7 +111,10 @@
 			  </form>
 
 			</div>
+<<<<<<< HEAD
 		 
+=======
+>>>>>>> d65657c13aa2fcbb23e266c0ef823f085105fcc9
 			
 		</div>
 				
@@ -94,4 +124,8 @@
 		
 		<script src="script.js"></script>
   </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> d65657c13aa2fcbb23e266c0ef823f085105fcc9
