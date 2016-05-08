@@ -72,12 +72,8 @@ get '/filter' do
   
   params.each { |k,v| session[k] = v }
   
-<<<<<<< HEAD
   session[:trail_attributes] = params[:trail_attributes]
-  
-=======
->>>>>>> d65657c13aa2fcbb23e266c0ef823f085105fcc9
-  
+
   redirect '/'
 end
 
