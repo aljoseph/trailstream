@@ -105,12 +105,10 @@ def add_transit_data hike
   if response[:duration]
     duration = response[:duration] 
     hike.update_attributes(:transit_time => duration)
-<<<<<<< HEAD
     attrs = JSON.parse hike.trail_attributes
     attrs << "Accessible by Bus"
     hike.update_attributes(:trail_attributes => attrs.to_json)
-=======
->>>>>>> d65657c13aa2fcbb23e266c0ef823f085105fcc9
+
   end
 end
 
