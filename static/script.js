@@ -1,3 +1,7 @@
+function toggleFilter(){
+	$("#filters-sorts").slideToggle(100);	
+}
+
 $( document ).ready(function() {
 	
 	$(".hikes").load("/hikes/1")
@@ -15,9 +19,5 @@ $( document ).ready(function() {
 	else {
 		$("a.btn").remove();
 	}
-	
-	$("#filterToggle").on( "click", function(event){
-		$("#filters-sorts").slideToggle(100);
-	});
 	
 });
